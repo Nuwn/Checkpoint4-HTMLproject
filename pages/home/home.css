@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+}
+
+body {
+  height: 700px;
+  margin: 0;
+}
+body section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body section p {
+  font-weight: 300;
+  font-size: 0.95em;
+  padding: 10px;
+}
+body section div {
+  margin: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body section div span {
+  max-height: 500px;
+}/*# sourceMappingURL=home.css.map */

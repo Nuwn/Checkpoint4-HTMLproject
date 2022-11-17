@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munamii - Cakery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <script>
+
+        // resize iframes after they loaded, doesnt work well with resize and iframes, wont make it work.
+        window.addEventListener('DOMContentLoaded', (e) => {
+            let iframes = document.querySelectorAll(".pageIframe");
+            let waitForResizeDone;
+
+            for (const item of iframes) {
+                item.addEventListener('load', () => {
+                    console.log(item.contentDocument.body.scrollHeight);
+                    item.style.height = item.contentDocument.body.querySelector('section').scrollHeight + 'px';
+                });
+            }
+
+            window.addEventListener('resize', () => {
+                clearTimeout(waitForResizeDone);
+                waitForResizeDone = setTimeout(() => {
+
+                    for (const item of iframes) {
+                        item.contentWindow.location.reload();
+                    }
+
+                }, 100);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div id="cover-overlay" style="background-image: url('https://wallpaperaccess.com/full/1986140.jpg');"></div>
+        <div id="cover-content">
+            <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/16830190/1498589015.jpg" alt="">
+            <h1>We Deliver!</h1>
+            <a href="#products"><button>Order now!</button></a>
+        </div>
+
+    </header>
+    <main>
+        <!-- I would normally build this with JS, and make it dynamically fit the content and not use iframe -->
+        <iframe class="pageIframe" id="home" src="pages/home/home.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="pageIframe" id="products" src="pages/products/products.html" scrolling="no"
+            frameborder="0"></iframe>
+        <iframe class="pageIframe" id="about" src="pages/about/about.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="pageIframe" id="contact" src="pages/contact/contact.html" frameborder="0"
+            scrolling="no"></iframe>
+    </main>
+    <footer>
+        <nav>
+            <i class="fa-brands fa-square-instagram" style="font-size:48px; color: #9E348D;"></i>
+            <i class="fa-brands fa-square-facebook" style="font-size:48px; color: #2374E1;"></i>
+        </nav>
+
+        <ul>
+            <li>Delivery times</li>
+            <li>Information and payments</li>
+            <li>Refund policy</li>
+        </ul>
+    </footer>
+</body>
+
+</html>

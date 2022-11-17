@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+
+body {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: auto auto;
+    grid-template-rows: min-content auto min-content;
+    gap: 0px 0px;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Dosis', sans-serif;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 100%;
+            gap: 20px;
+
+            @media screen and (min-width: 768px) {
+                justify-content: flex-start;
+                padding-left: 50px;
+            }
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #47d1ba;
+                font-family: 'Dosis', sans-serif;
+                font-weight: 500;
+                font-size: 1.2em;
+            }
+        }
+
+        #cover-overlay {
+            width: 100%;
+            height: 40vh;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #cover-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+
+            img {
+                width: 100px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                color: #F49CA1;
+            }
+
+            button {
+                margin-top: 30px;
+                height: 50px;
+                width: 120px;
+                border: 0;
+                border-radius: 3px;
+                background-color: #47d1ba;
+                color: #fff;
+                font-size: 1.3em;
+                font-family: 'Dosis', sans-serif;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+
+    main {
+        iframe {
+            width: 100%;
+        }
+    }
+
+    footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+        background-color: #eee;
+
+        nav {
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            cursor: pointer;
+            gap: 15px;
+            font-size: 0.8em;
+        }
+    }
+}
